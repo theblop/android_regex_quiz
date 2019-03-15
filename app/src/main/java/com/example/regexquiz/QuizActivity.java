@@ -62,7 +62,7 @@ public class QuizActivity extends AppCompatActivity {
         String regex_text = curQuestion.getREGEXTEXT();
         Pattern p = Pattern.compile(regex_text);
         Matcher m = p.matcher(answer);
-        boolean ok = m.matches();
+        boolean ok = m.matches() || curQuestion.isSolved(); // don't check already solved questions
 
         if (ok) {
             score++;
