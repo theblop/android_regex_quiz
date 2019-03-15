@@ -21,7 +21,11 @@ public class QuizDBHelper extends SQLiteOpenHelper {
     private static final String COL_SOLVED = "solved";
     private static final List<String> REGEX_QUESTIONS = Arrays.asList(
         "[a-z]+",
-        "[0-9]{1,5}"
+        "[0-9]{1,5}",
+        "[^h]([aeiou])v" + "\\" + "1.+",
+        "[a-f]{1,3}r[p-z]{1,3}",
+        "[a-z]+[.?!]",
+        "<[^>]+>"
     );
 
     private SQLiteDatabase dbase;
